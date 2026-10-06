@@ -1,0 +1,43 @@
+{
+  "name": "caffe-aroma",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Caffe Aroma, Elmwood Village, Buffalo: 6 AM to midnight 3D site with online ordering",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "menu": "node scripts/normalize-menu.mjs",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
+    "@react-three/postprocessing": "^3.1.3",
+    "gsap": "^3.15.0",
+    "next": "^16.3.8",
+    "postprocessing": "^6.37.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "three": "^0.186.1",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.186.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.3.8",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

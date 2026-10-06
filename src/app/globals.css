@@ -1,0 +1,505 @@
+@import "tailwindcss";
+
+/*
+  Caffe Aroma design tokens.
+  Two palettes ("crema" day, "ink" night) blended by a single variable, --night (0..1),
+  which the time-of-day engine sets. Brand colors come from the cafe's own logo:
+  brick red frame, bottle green stripes, ink-black type.
+*/
+
+:root {
+  --night: 0;
+
+  /* Brand */
+  --aroma-red: #b3261e;
+  --aroma-green: #2f6b3b;
+  --amber: #ffb347;
+  --neon: #ff5d3a;
+
+  /* Day: crema */
+  --d-bg: #f5ebd9;
+  --d-surface: #fffaf0;
+  --d-surface-2: #eddfc6;
+  --d-fg: #1b120d;
+  --d-muted: #66503f;
+  --d-line: rgb(27 18 13 / 0.16);
+  --d-accent: #b3261e;
+  --d-cta: #1b120d;
+  --d-on-cta: #f9efdc;
+
+  /* Night: ink */
+  --n-bg: #0d0a13;
+  --n-surface: #171220;
+  --n-surface-2: #231b30;
+  --n-fg: #f6e9d5;
+  --n-muted: #b9a995;
+  --n-line: rgb(246 233 213 / 0.16);
+  --n-accent: #ffb347;
+  --n-cta: #ffb347;
+  --n-on-cta: #1a110c;
+
+  --bg: color-mix(in oklab, var(--d-bg), var(--n-bg) calc(var(--night) * 100%));
+  --surface: color-mix(in oklab, var(--d-surface), var(--n-surface) calc(var(--night) * 100%));
+  --surface-2: color-mix(in oklab, var(--d-surface-2), var(--n-surface-2) calc(var(--night) * 100%));
+  --fg: color-mix(in oklab, var(--d-fg), var(--n-fg) calc(var(--night) * 100%));
+  --muted: color-mix(in oklab, var(--d-muted), var(--n-muted) calc(var(--night) * 100%));
+  --line: color-mix(in oklab, var(--d-line), var(--n-line) calc(var(--night) * 100%));
+  --accent: color-mix(in oklab, var(--d-accent), var(--n-accent) calc(var(--night) * 100%));
+  --cta: color-mix(in oklab, var(--d-cta), var(--n-cta) calc(var(--night) * 100%));
+  --on-cta: color-mix(in oklab, var(--d-on-cta), var(--n-on-cta) calc(var(--night) * 100%));
+
+  /* Always-dark/always-light text for use on top of the 3D scene (its interior is lit but kept dark). */
+  --on-scene: #f8ecd8;
+  --on-scene-muted: #e2cfb4;
+
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+@theme inline {
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-script: var(--font-script), cursive;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-cta: var(--cta);
+  --color-on-cta: var(--on-cta);
+  --color-red: var(--aroma-red);
+  --color-green: var(--aroma-green);
+  --color-amber: var(--amber);
+  --color-neon: var(--neon);
+  --color-on-scene: var(--on-scene);
+  --color-on-scene-muted: var(--on-scene-muted);
+}
+
+html {
+  background: var(--bg);
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--aroma-red);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Display type */
+.display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.eyebrow {
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 52px;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.35s var(--ease), background-color 0.3s, color 0.3s, box-shadow 0.35s var(--ease);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-primary {
+  background: var(--cta);
+  color: var(--on-cta);
+  box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--cta), transparent 40%);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px color-mix(in oklab, var(--cta), transparent 25%);
+}
+.btn-ghost {
+  border: 1.5px solid currentColor;
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: color-mix(in oklab, currentColor, transparent 88%);
+}
+/* Buttons that sit on top of the 3D scene always use scene colors, not the theme. */
+.on-scene .btn-primary {
+  background: var(--amber);
+  color: #1a110c;
+}
+.on-scene .btn-ghost {
+  color: var(--on-scene);
+  border-color: rgb(248 236 216 / 0.7);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--surface), transparent 20%);
+  backdrop-filter: blur(10px);
+}
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 99px;
+  background: #3ecf6e;
+  box-shadow: 0 0 0 0 rgb(62 207 110 / 0.6);
+  animation: pulse 2s infinite;
+}
+.live-dot[data-closed="true"] {
+  background: #e0593a;
+  animation: none;
+}
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 9px rgb(62 207 110 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(62 207 110 / 0);
+  }
+}
+
+/* Noise grain overlay for tactile depth on flat surfaces */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ───────────── Order UI ───────────── */
+dialog.sheet {
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+  width: min(980px, 100vw);
+  max-width: 100vw;
+  max-height: min(820px, 100dvh);
+  margin: auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 40px 120px -20px rgb(0 0 0 / 0.6);
+}
+dialog.sheet[open] {
+  animation: sheet-in 0.38s var(--ease);
+}
+dialog.sheet::backdrop {
+  background: rgb(8 4 3 / 0.66);
+  backdrop-filter: blur(6px);
+}
+@media (max-width: 767px) {
+  dialog.sheet {
+    margin: auto 0 0;
+    width: 100%;
+    max-height: 94dvh;
+    border-radius: 28px 28px 0 0;
+    border-bottom: 0;
+  }
+  dialog.sheet[open] {
+    animation: sheet-up 0.42s var(--ease);
+  }
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+}
+@keyframes sheet-up {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}
+
+.menu-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  align-items: start;
+  width: 100%;
+  min-height: 108px;
+  padding: 16px;
+  text-align: left;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.25s;
+  cursor: pointer;
+}
+.menu-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--fg), transparent 60%);
+  box-shadow: 0 18px 40px -22px rgb(0 0 0 / 0.55);
+}
+.menu-card:active {
+  transform: scale(0.985);
+}
+.menu-card[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.menu-card .plus {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 99px;
+  background: var(--cta);
+  color: var(--on-cta);
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+.menu-card:hover .plus {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.cat-chip {
+  white-space: nowrap;
+  padding: 0.55rem 1rem;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+.cat-chip[aria-current="true"] {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.field {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--fg);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--fg), transparent 88%);
+}
+.field[aria-invalid="true"] {
+  border-color: #d6402a;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Re-resolve the day/night blend on any element that sets its own --night (used by the counter board, always dark). */
+.theme-scope {
+  --bg: color-mix(in oklab, var(--d-bg), var(--n-bg) calc(var(--night) * 100%));
+  --surface: color-mix(in oklab, var(--d-surface), var(--n-surface) calc(var(--night) * 100%));
+  --surface-2: color-mix(in oklab, var(--d-surface-2), var(--n-surface-2) calc(var(--night) * 100%));
+  --fg: color-mix(in oklab, var(--d-fg), var(--n-fg) calc(var(--night) * 100%));
+  --muted: color-mix(in oklab, var(--d-muted), var(--n-muted) calc(var(--night) * 100%));
+  --line: color-mix(in oklab, var(--d-line), var(--n-line) calc(var(--night) * 100%));
+  --accent: color-mix(in oklab, var(--d-accent), var(--n-accent) calc(var(--night) * 100%));
+  --cta: color-mix(in oklab, var(--d-cta), var(--n-cta) calc(var(--night) * 100%));
+  --on-cta: color-mix(in oklab, var(--d-on-cta), var(--n-on-cta) calc(var(--night) * 100%));
+  background: var(--bg);
+  color: var(--fg);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rise {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* scroll reveal (only hidden when JS is running, so content never disappears without it) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.js .reveal[data-in] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Stills of the real 3D scene: the first paint, and the fallback for no-WebGL / reduced-motion / data-saver visitors.
+   The hero is outside on the sidewalk (data-scene="ext"); once you are through the door it is the room (data-scene="int").
+   data-poster / data-scene are set before first paint (layout.tsx) so only the one image that matches the hour is downloaded. */
+.poster-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #2a100d;
+  background-size: cover;
+  background-position: 58% 50%;
+}
+html[data-scene="ext"][data-poster="0"] .poster-bg { background-image: url(/posters/ext-06.webp); }
+html[data-scene="ext"][data-poster="1"] .poster-bg { background-image: url(/posters/ext-09.webp); }
+html[data-scene="ext"][data-poster="2"] .poster-bg { background-image: url(/posters/ext-12.webp); }
+html[data-scene="ext"][data-poster="3"] .poster-bg { background-image: url(/posters/ext-15.webp); }
+html[data-scene="ext"][data-poster="4"] .poster-bg { background-image: url(/posters/ext-18.webp); }
+html[data-scene="ext"][data-poster="5"] .poster-bg { background-image: url(/posters/ext-21.webp); }
+html:not([data-scene="ext"])[data-poster="0"] .poster-bg { background-image: url(/posters/tod-06.webp); background-position: 58% 40%; }
+html:not([data-scene="ext"])[data-poster="1"] .poster-bg { background-image: url(/posters/tod-09.webp); background-position: 58% 40%; }
+html:not([data-scene="ext"])[data-poster="2"] .poster-bg { background-image: url(/posters/tod-12.webp); background-position: 58% 40%; }
+html:not([data-scene="ext"])[data-poster="3"] .poster-bg { background-image: url(/posters/tod-15.webp); background-position: 58% 40%; }
+html:not([data-scene="ext"])[data-poster="4"] .poster-bg { background-image: url(/posters/tod-18.webp); background-position: 58% 40%; }
+html:not([data-scene="ext"])[data-poster="5"] .poster-bg { background-image: url(/posters/tod-21.webp); background-position: 58% 40%; }
+@media (max-width: 767px) {
+  html[data-scene="ext"] .poster-bg { background-position: 58% 45%; }
+  html:not([data-scene="ext"]) .poster-bg { background-position: 66% 30%; }
+}
+
+/* Home page only (it is the one with the #top stage). The hero and the story scenes snap into place, one screen at a time, so
+   scrolling never rests half-way between two scenes. From "Plan your visit" to the footer the page scrolls freely: all of it
+   (the main content AND the footer, so the very end is covered too) is ONE snap area, and a snap area taller than the screen
+   can be scrolled through at any offset. Coming out of the last scene still snaps to a whole screen. */
+html:has(#top) {
+  scroll-snap-type: y mandatory;
+}
+.free-scroll {
+  scroll-snap-align: start;
+}
+
+/* Mobile menu */
+dialog.nav-sheet {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  padding: 0;
+  width: min(440px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+}
+dialog.nav-sheet[open] {
+  animation: nav-in 0.38s var(--ease);
+}
+dialog.nav-sheet::backdrop {
+  background: rgb(8 4 3 / 0.62);
+  backdrop-filter: blur(5px);
+}
+@keyframes nav-in {
+  from {
+    transform: translateX(48px);
+    opacity: 0;
+  }
+}

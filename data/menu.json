@@ -1,0 +1,3021 @@
+{
+  "meta": {
+    "source": "Clover online ordering snapshot (public storefront JSON)",
+    "merchantSlug": "the-caffe-elmwood-llc-buffalo",
+    "snapshotAt": "2026-10-06T05:19:24.366Z",
+    "currency": "USD",
+    "note": "Prices in cents. Final price = item.price + sum(selected option prices)."
+  },
+  "categories": [
+    {
+      "id": "specials",
+      "name": "Today's Specials",
+      "blurb": "Seasonal pours and off-menu favorites.",
+      "daypart": "any"
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "blurb": "Brewed by the cup.",
+      "daypart": "morning"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso Bar",
+      "blurb": "Pulled to order, hot.",
+      "daypart": "morning"
+    },
+    {
+      "id": "iced",
+      "name": "Iced & Blended",
+      "blurb": "Over ice or blended.",
+      "daypart": "day"
+    },
+    {
+      "id": "tea",
+      "name": "Tea, Soda & More",
+      "blurb": "Loose-leaf tea, chai, matcha, cocoa.",
+      "daypart": "day"
+    },
+    {
+      "id": "breakfast",
+      "name": "Bagels & Breakfast",
+      "blurb": "Served all day.",
+      "daypart": "morning"
+    },
+    {
+      "id": "sweets",
+      "name": "Sweets",
+      "blurb": "Biscotti, cookies and cake.",
+      "daypart": "any"
+    },
+    {
+      "id": "cocktails",
+      "name": "Coffee Cocktails",
+      "blurb": "After five the espresso machine moonlights.",
+      "daypart": "night"
+    },
+    {
+      "id": "beer",
+      "name": "Beer",
+      "blurb": "Cold, canned and bottled.",
+      "daypart": "night"
+    },
+    {
+      "id": "wine",
+      "name": "Wine",
+      "blurb": "By the bottle.",
+      "daypart": "night"
+    },
+    {
+      "id": "box",
+      "name": "Coffee Box",
+      "blurb": "Joe to go, for the office or the park.",
+      "daypart": "any"
+    }
+  ],
+  "groups": {
+    "milk": {
+      "min": 0,
+      "max": 1,
+      "id": "milk",
+      "name": "Milk",
+      "kind": "milk",
+      "options": [
+        {
+          "id": "whole",
+          "price": 0,
+          "name": "Whole"
+        },
+        {
+          "id": "skim",
+          "price": 0,
+          "name": "Skim"
+        },
+        {
+          "id": "oat",
+          "price": 140,
+          "name": "Oat"
+        },
+        {
+          "id": "almond",
+          "price": 135,
+          "name": "Almond"
+        },
+        {
+          "id": "coconut",
+          "price": 145,
+          "name": "Coconut"
+        }
+      ],
+      "default": "whole"
+    },
+    "milk-alt": {
+      "min": 0,
+      "max": 1,
+      "id": "milk-alt",
+      "name": "Milk",
+      "kind": "milk",
+      "options": [
+        {
+          "id": "whole",
+          "price": 0,
+          "name": "Whole"
+        },
+        {
+          "id": "oat",
+          "price": 75,
+          "name": "Oat"
+        },
+        {
+          "id": "almond",
+          "price": 75,
+          "name": "Almond"
+        },
+        {
+          "id": "coconut",
+          "price": 0,
+          "name": "Coconut"
+        }
+      ],
+      "default": "whole"
+    },
+    "boost": {
+      "min": 0,
+      "max": 4,
+      "id": "boost",
+      "name": "Boost it",
+      "kind": "boost",
+      "options": [
+        {
+          "id": "decaf-espresso",
+          "price": 50,
+          "name": "Decaf espresso"
+        },
+        {
+          "id": "extra-shot",
+          "price": 150,
+          "name": "Extra shot"
+        },
+        {
+          "id": "extra-double-shot",
+          "price": 225,
+          "name": "Extra double shot"
+        },
+        {
+          "id": "lions-mane-powder",
+          "price": 200,
+          "name": "Lion's mane powder"
+        }
+      ]
+    },
+    "boost-lm": {
+      "min": 0,
+      "max": 1,
+      "id": "boost-lm",
+      "name": "Boost it",
+      "kind": "boost",
+      "options": [
+        {
+          "id": "lions-mane-powder",
+          "price": 200,
+          "name": "Lion's mane powder"
+        }
+      ]
+    },
+    "flavor": {
+      "min": 0,
+      "max": 3,
+      "id": "flavor",
+      "name": "Add a flavor shot",
+      "kind": "flavor",
+      "options": [
+        {
+          "id": "vanilla",
+          "price": 75,
+          "name": "Vanilla"
+        },
+        {
+          "id": "hazelnut",
+          "price": 75,
+          "name": "Hazelnut"
+        },
+        {
+          "id": "caramel",
+          "price": 75,
+          "name": "Caramel"
+        },
+        {
+          "id": "pumpkin-spice",
+          "price": 75,
+          "name": "Pumpkin Spice"
+        },
+        {
+          "id": "lavender",
+          "price": 75,
+          "name": "Lavender"
+        },
+        {
+          "id": "almond",
+          "price": 75,
+          "name": "Almond"
+        },
+        {
+          "id": "amaretto",
+          "price": 75,
+          "name": "Amaretto"
+        },
+        {
+          "id": "blackberry",
+          "price": 75,
+          "name": "Blackberry"
+        },
+        {
+          "id": "butterscotch",
+          "price": 75,
+          "name": "Butterscotch"
+        },
+        {
+          "id": "cherry",
+          "price": 75,
+          "name": "Cherry"
+        },
+        {
+          "id": "cinnamon",
+          "price": 75,
+          "name": "Cinnamon"
+        },
+        {
+          "id": "coconut",
+          "price": 75,
+          "name": "Coconut"
+        },
+        {
+          "id": "ginger",
+          "price": 75,
+          "name": "Ginger"
+        },
+        {
+          "id": "green-mint",
+          "price": 75,
+          "name": "Green Mint"
+        },
+        {
+          "id": "irish-cream",
+          "price": 75,
+          "name": "Irish Cream"
+        },
+        {
+          "id": "lemon",
+          "price": 75,
+          "name": "Lemon"
+        },
+        {
+          "id": "lime",
+          "price": 75,
+          "name": "Lime"
+        },
+        {
+          "id": "maple-pancake",
+          "price": 75,
+          "name": "Maple Pancake"
+        },
+        {
+          "id": "orange",
+          "price": 75,
+          "name": "Orange"
+        },
+        {
+          "id": "peach",
+          "price": 75,
+          "name": "Peach"
+        },
+        {
+          "id": "peppermint",
+          "price": 75,
+          "name": "Peppermint"
+        },
+        {
+          "id": "raspberry",
+          "price": 75,
+          "name": "Raspberry"
+        },
+        {
+          "id": "rose",
+          "price": 75,
+          "name": "Rose"
+        },
+        {
+          "id": "strawberry",
+          "price": 75,
+          "name": "Strawberry"
+        },
+        {
+          "id": "sugar-free-caramel",
+          "price": 75,
+          "name": "Sugar Free Caramel"
+        },
+        {
+          "id": "sugar-free-chocolate",
+          "price": 75,
+          "name": "Sugar Free Chocolate"
+        },
+        {
+          "id": "sugar-free-vanilla",
+          "price": 75,
+          "name": "Sugar Free Vanilla"
+        }
+      ]
+    },
+    "flavor-included-req": {
+      "min": 1,
+      "max": 1,
+      "id": "flavor-included-req",
+      "name": "Choose a flavor",
+      "kind": "flavor",
+      "options": [
+        {
+          "id": "almond",
+          "price": 0,
+          "name": "Almond"
+        },
+        {
+          "id": "amaretto",
+          "price": 0,
+          "name": "Amaretto"
+        },
+        {
+          "id": "blackberry",
+          "price": 0,
+          "name": "Blackberry"
+        },
+        {
+          "id": "butterscotch",
+          "price": 0,
+          "name": "Butterscotch"
+        },
+        {
+          "id": "caramel",
+          "price": 0,
+          "name": "Caramel"
+        },
+        {
+          "id": "cinnamon",
+          "price": 0,
+          "name": "Cinnamon"
+        },
+        {
+          "id": "cherry",
+          "price": 0,
+          "name": "Cherry"
+        },
+        {
+          "id": "coconut",
+          "price": 0,
+          "name": "Coconut"
+        },
+        {
+          "id": "french-vanilla",
+          "price": 0,
+          "name": "French Vanilla"
+        },
+        {
+          "id": "ginger",
+          "price": 0,
+          "name": "Ginger"
+        },
+        {
+          "id": "gingerbread",
+          "price": 0,
+          "name": "Gingerbread"
+        },
+        {
+          "id": "green-mint",
+          "price": 0,
+          "name": "Green Mint"
+        },
+        {
+          "id": "hazelnut",
+          "price": 0,
+          "name": "Hazelnut"
+        },
+        {
+          "id": "honey-cinnamon",
+          "price": 0,
+          "name": "Honey Cinnamon"
+        },
+        {
+          "id": "irish-cream",
+          "price": 0,
+          "name": "Irish Cream"
+        },
+        {
+          "id": "lavender",
+          "price": 0,
+          "name": "Lavender"
+        },
+        {
+          "id": "lemon",
+          "price": 0,
+          "name": "Lemon"
+        },
+        {
+          "id": "lime",
+          "price": 0,
+          "name": "Lime"
+        },
+        {
+          "id": "macadamia-nut",
+          "price": 0,
+          "name": "Macadamia Nut"
+        },
+        {
+          "id": "maple-pancake",
+          "price": 0,
+          "name": "Maple Pancake"
+        },
+        {
+          "id": "orange",
+          "price": 0,
+          "name": "Orange"
+        },
+        {
+          "id": "peach",
+          "price": 0,
+          "name": "Peach"
+        },
+        {
+          "id": "peppermint",
+          "price": 0,
+          "name": "Peppermint"
+        },
+        {
+          "id": "pumpkin-spice",
+          "price": 0,
+          "name": "Pumpkin Spice"
+        },
+        {
+          "id": "raspberry",
+          "price": 0,
+          "name": "Raspberry"
+        },
+        {
+          "id": "rose",
+          "price": 0,
+          "name": "Rose"
+        },
+        {
+          "id": "sugar-free-caramel",
+          "price": 0,
+          "name": "Sugar Free Caramel"
+        },
+        {
+          "id": "sugar-free-chocolate",
+          "price": 0,
+          "name": "Sugar Free Chocolate"
+        },
+        {
+          "id": "sugar-free-hazelnut",
+          "price": 0,
+          "name": "Sugar Free Hazelnut"
+        },
+        {
+          "id": "sugar-free-vanilla",
+          "price": 0,
+          "name": "Sugar Free Vanilla"
+        },
+        {
+          "id": "strawberry",
+          "price": 0,
+          "name": "Strawberry"
+        },
+        {
+          "id": "vanilla",
+          "price": 0,
+          "name": "Vanilla"
+        }
+      ]
+    },
+    "details-hot": {
+      "min": 0,
+      "max": 4,
+      "id": "details-hot",
+      "name": "Make it your way",
+      "kind": "detail",
+      "options": [
+        {
+          "id": "long-pull",
+          "price": 0,
+          "name": "Long Pull"
+        },
+        {
+          "id": "leave-room",
+          "price": 0,
+          "name": "Leave Room"
+        },
+        {
+          "id": "extra-hot",
+          "price": 0,
+          "name": "Extra Hot"
+        },
+        {
+          "id": "not-too-hot",
+          "price": 0,
+          "name": "Not Too Hot"
+        }
+      ]
+    },
+    "details-iced": {
+      "min": 0,
+      "max": 4,
+      "id": "details-iced",
+      "name": "Make it your way",
+      "kind": "detail",
+      "options": [
+        {
+          "id": "light-ice",
+          "price": 0,
+          "name": "Light Ice"
+        },
+        {
+          "id": "long-pull",
+          "price": 0,
+          "name": "Long Pull"
+        },
+        {
+          "id": "leave-room",
+          "price": 0,
+          "name": "Leave Room"
+        },
+        {
+          "id": "extra-ice",
+          "price": 0,
+          "name": "Extra Ice"
+        }
+      ]
+    },
+    "whip": {
+      "min": 0,
+      "max": 1,
+      "id": "whip",
+      "name": "Whipped cream",
+      "kind": "topping",
+      "options": [
+        {
+          "id": "whipped-cream",
+          "price": 0,
+          "name": "Whipped cream"
+        },
+        {
+          "id": "no-whipped-cream",
+          "price": 0,
+          "name": "No whipped cream"
+        }
+      ]
+    },
+    "choc": {
+      "min": 0,
+      "max": 1,
+      "id": "choc",
+      "name": "Chocolate",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "white-chocolate",
+          "price": 0,
+          "name": "White chocolate"
+        }
+      ]
+    },
+    "tea": {
+      "min": 1,
+      "max": 1,
+      "id": "tea",
+      "name": "Choose your tea",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "blackberry-sage",
+          "price": 0,
+          "name": "Blackberry sage"
+        },
+        {
+          "id": "british-breakfast",
+          "price": 0,
+          "name": "British Breakfast"
+        },
+        {
+          "id": "british-breakfast-decaf",
+          "price": 0,
+          "name": "British Breakfast decaf"
+        },
+        {
+          "id": "chamomile-lemon",
+          "price": 0,
+          "name": "Chamomile Lemon"
+        },
+        {
+          "id": "earl-grey",
+          "price": 0,
+          "name": "Earl Grey"
+        },
+        {
+          "id": "ginger-peach-white-tea",
+          "price": 0,
+          "name": "Ginger Peach White Tea"
+        },
+        {
+          "id": "honey-ginseng",
+          "price": 0,
+          "name": "Honey Ginseng"
+        },
+        {
+          "id": "mint-fields-organic",
+          "price": 0,
+          "name": "Mint Fields Organic"
+        },
+        {
+          "id": "the-peoples-green",
+          "price": 0,
+          "name": "The People's Green"
+        },
+        {
+          "id": "turmeric-ginger",
+          "price": 0,
+          "name": "Turmeric Ginger"
+        }
+      ]
+    },
+    "matcha-sweet": {
+      "min": 1,
+      "max": 1,
+      "id": "matcha-sweet",
+      "name": "Sweetness",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "sweetened",
+          "price": 0,
+          "name": "Sweetened"
+        },
+        {
+          "id": "unsweetened",
+          "price": 0,
+          "name": "Unsweetened"
+        }
+      ]
+    },
+    "iced-tea-flavor": {
+      "min": 1,
+      "max": 1,
+      "id": "iced-tea-flavor",
+      "name": "Choose your iced tea",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "green-tea",
+          "price": 0,
+          "name": "Green Tea"
+        },
+        {
+          "id": "ginger-peach",
+          "price": 0,
+          "name": "Ginger Peach"
+        },
+        {
+          "id": "hibiscus-passionfruit",
+          "price": 0,
+          "name": "Hibiscus Passionfruit"
+        }
+      ]
+    },
+    "smoothie-flavor": {
+      "min": 1,
+      "max": 1,
+      "id": "smoothie-flavor",
+      "name": "Flavor",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "strawberry",
+          "price": 0,
+          "name": "Strawberry"
+        },
+        {
+          "id": "mango",
+          "price": 0,
+          "name": "Mango"
+        }
+      ]
+    },
+    "smoothie-add": {
+      "min": 0,
+      "max": 2,
+      "id": "smoothie-add",
+      "name": "Add-ins",
+      "kind": "boost",
+      "options": [
+        {
+          "id": "soy-milk",
+          "price": 50,
+          "name": "Soy Milk"
+        },
+        {
+          "id": "almond-milk",
+          "price": 100,
+          "name": "Almond Milk"
+        },
+        {
+          "id": "oat-milk",
+          "price": 100,
+          "name": "Oat Milk"
+        },
+        {
+          "id": "whole-milk",
+          "price": 75,
+          "name": "whole milk"
+        },
+        {
+          "id": "granola",
+          "price": 50,
+          "name": "Granola"
+        },
+        {
+          "id": "yogurt",
+          "price": 100,
+          "name": "Yogurt"
+        }
+      ]
+    },
+    "bread": {
+      "min": 1,
+      "max": 1,
+      "id": "bread",
+      "name": "Choose your bread",
+      "kind": "choice",
+      "options": [
+        {
+          "id": "everything-bagel",
+          "price": 0,
+          "name": "Everything Bagel"
+        },
+        {
+          "id": "plain-bagel",
+          "price": 0,
+          "name": "Plain Bagel"
+        },
+        {
+          "id": "cinnamon-raisin-bagel",
+          "price": 0,
+          "name": "Cinnamon Raisin Bagel"
+        },
+        {
+          "id": "butter-croissant",
+          "price": 0,
+          "name": "Butter croissant"
+        },
+        {
+          "id": "sesame-bagel",
+          "price": 0,
+          "name": "Sesame Bagel"
+        },
+        {
+          "id": "toast",
+          "price": 0,
+          "name": "Toast"
+        },
+        {
+          "id": "gf-bread",
+          "price": 0,
+          "name": "GF Bread"
+        }
+      ]
+    },
+    "spreads": {
+      "min": 0,
+      "max": 13,
+      "id": "spreads",
+      "name": "Spreads & fillings",
+      "kind": "extra",
+      "options": [
+        {
+          "id": "ham",
+          "price": 175,
+          "name": "Ham"
+        },
+        {
+          "id": "butter",
+          "price": 0,
+          "name": "Butter"
+        },
+        {
+          "id": "cream-cheese",
+          "price": 100,
+          "name": "Cream Cheese"
+        },
+        {
+          "id": "turkey",
+          "price": 200,
+          "name": "Turkey"
+        },
+        {
+          "id": "tomato",
+          "price": 100,
+          "name": "Tomato"
+        },
+        {
+          "id": "fresh-mozzarella",
+          "price": 350,
+          "name": "Fresh mozzarella"
+        },
+        {
+          "id": "american-cheese",
+          "price": 0,
+          "name": "American Cheese"
+        },
+        {
+          "id": "pepperjack-cheese",
+          "price": 0,
+          "name": "Pepperjack Cheese"
+        },
+        {
+          "id": "hummus",
+          "price": 200,
+          "name": "Hummus"
+        },
+        {
+          "id": "pesto",
+          "price": 200,
+          "name": "Pesto"
+        },
+        {
+          "id": "jam",
+          "price": 100,
+          "name": "Jam"
+        },
+        {
+          "id": "bacon-2-slices",
+          "price": 175,
+          "name": "Bacon (2 slices)"
+        },
+        {
+          "id": "peanut-butter",
+          "price": 100,
+          "name": "Peanut Butter"
+        },
+        {
+          "id": "flavored-cream-cheese",
+          "price": 100,
+          "name": "Flavored cream cheese"
+        }
+      ]
+    },
+    "side": {
+      "min": 0,
+      "max": 1,
+      "id": "side",
+      "name": "Add a side",
+      "kind": "extra",
+      "options": [
+        {
+          "id": "pasta-salad",
+          "price": 350,
+          "name": "Pasta Salad"
+        },
+        {
+          "id": "bean-salad",
+          "price": 275,
+          "name": "Bean Salad"
+        },
+        {
+          "id": "quinoa-salad",
+          "price": 275,
+          "name": "Quinoa Salad"
+        },
+        {
+          "id": "soup-in-small-white-cup",
+          "price": 250,
+          "name": "Soup In Small White Cup"
+        }
+      ]
+    },
+    "box-milk": {
+      "min": 0,
+      "max": 1,
+      "id": "box-milk",
+      "name": "Milk alternative for the box",
+      "kind": "milk",
+      "options": [
+        {
+          "id": "almond",
+          "price": 200,
+          "name": "Almond"
+        },
+        {
+          "id": "oat",
+          "price": 200,
+          "name": "Oat"
+        }
+      ]
+    },
+    "kit": {
+      "min": 1,
+      "max": 1,
+      "id": "kit",
+      "name": "What comes with it",
+      "kind": "size",
+      "options": [
+        {
+          "id": "coffee-only-in-a-to-go-container",
+          "price": 2700,
+          "name": "Coffee only, in a to-go container"
+        },
+        {
+          "id": "box-10-cups-half-and-half-and-sugar",
+          "price": 3100,
+          "name": "Box + 10 cups, half & half and sugar"
+        }
+      ]
+    },
+    "size-rn4zjmtvjv9s8": {
+      "min": 1,
+      "max": 1,
+      "id": "size-rn4zjmtvjv9s8",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 450,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 500,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 545,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-7ksdz53xyny9m": {
+      "min": 1,
+      "max": 1,
+      "id": "size-7ksdz53xyny9m",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 475,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 525,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 595,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-vsch8a7srvznc": {
+      "min": 1,
+      "max": 1,
+      "id": "size-vsch8a7srvznc",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "16-9-oz",
+          "price": 295,
+          "name": "16.9 oz"
+        },
+        {
+          "id": "large",
+          "price": 450,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-a6d8j12rg3fga": {
+      "min": 1,
+      "max": 1,
+      "id": "size-a6d8j12rg3fga",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "single",
+          "price": 295,
+          "name": "Single"
+        },
+        {
+          "id": "doppio",
+          "price": 350,
+          "name": "Doppio"
+        }
+      ]
+    },
+    "size-hpavrt0w4p66w": {
+      "min": 1,
+      "max": 1,
+      "id": "size-hpavrt0w4p66w",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 275,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 295,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 350,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-b7yzggdwkvbar": {
+      "min": 1,
+      "max": 1,
+      "id": "size-b7yzggdwkvbar",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 400,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 450,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 500,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-aed172efsvz00": {
+      "min": 1,
+      "max": 1,
+      "id": "size-aed172efsvz00",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 350,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 395,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 435,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-schmst612hmse": {
+      "min": 1,
+      "max": 1,
+      "id": "size-schmst612hmse",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 425,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 475,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 525,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-1r0pb2gkg85ac": {
+      "min": 1,
+      "max": 1,
+      "id": "size-1r0pb2gkg85ac",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 375,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 450,
+          "name": "Medium"
+        },
+        {
+          "id": "large-3-shots",
+          "price": 525,
+          "name": "Large (3 shots)"
+        }
+      ]
+    },
+    "size-6d5mfhepgxtkp": {
+      "min": 1,
+      "max": 1,
+      "id": "size-6d5mfhepgxtkp",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 525,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 575,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 650,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-kvw9gt0pn25mm": {
+      "min": 1,
+      "max": 1,
+      "id": "size-kvw9gt0pn25mm",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 525,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 575,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 625,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-z5apv47yyj7jg": {
+      "min": 1,
+      "max": 1,
+      "id": "size-z5apv47yyj7jg",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 450,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 500,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 545,
+          "name": "Large"
+        }
+      ]
+    },
+    "size-p0xhhv08ec8j6": {
+      "min": 1,
+      "max": 1,
+      "id": "size-p0xhhv08ec8j6",
+      "name": "Single or double",
+      "kind": "size",
+      "options": [
+        {
+          "id": "single",
+          "price": 325,
+          "name": "Single"
+        },
+        {
+          "id": "double",
+          "price": 450,
+          "name": "Double"
+        }
+      ]
+    },
+    "size-drip": {
+      "min": 1,
+      "max": 1,
+      "id": "size-drip",
+      "name": "Size",
+      "kind": "size",
+      "options": [
+        {
+          "id": "small",
+          "price": 275,
+          "name": "Small"
+        },
+        {
+          "id": "medium",
+          "price": 295,
+          "name": "Medium"
+        },
+        {
+          "id": "large",
+          "price": 349,
+          "name": "Large"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "id": "0ZN6195FVNB30",
+      "slug": "peppered-pumpkin-cortado",
+      "name": "Peppered Pumpkin Cortado",
+      "description": "Pumpkin spice pulled into espresso, a pinch of black pepper steamed with the milk, cinnamon on top.",
+      "categoryId": "specials",
+      "price": 525,
+      "groups": [
+        "milk",
+        "boost"
+      ],
+      "tags": [
+        "special",
+        "seasonal"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b9722f",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "4ZG4Q946TN5RP",
+      "slug": "chocolate-cherry-latte",
+      "name": "Chocolate Cherry Latte",
+      "description": "Our mocha mix with cherry and espresso, topped off with steamed milk.",
+      "categoryId": "specials",
+      "price": 0,
+      "groups": [
+        "size-kvw9gt0pn25mm",
+        "milk",
+        "boost",
+        "whip"
+      ],
+      "tags": [
+        "special"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#7c2a35",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "K3JZS8Y6Q7PAP",
+      "slug": "rose-london-fog",
+      "name": "Rose London Fog",
+      "description": "Earl grey and rose with steamed milk. The Lucy Dacus special.",
+      "categoryId": "specials",
+      "price": 0,
+      "groups": [
+        "size-b7yzggdwkvbar",
+        "milk-alt"
+      ],
+      "tags": [
+        "special"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#cdbba0",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover name is \"Lucy Dacus Rose London Fog\": confirm the name/story is OK to publish."
+    },
+    {
+      "id": "N88X2MCTXW68Y",
+      "slug": "frittata-and-coffee-mimosa",
+      "name": "Frittata & Coffee Mimosa",
+      "description": "The weekend special: a baked frittata with a coffee mimosa.",
+      "categoryId": "specials",
+      "price": 1650,
+      "groups": [],
+      "tags": [
+        "special",
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "plate",
+        "liquid": "#e8922a",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover calls this \"Special Frittata Coffee Mimossa\" ($16.50) and does not flag it 21+. We treat it as alcohol (mimosa) until confirmed."
+    },
+    {
+      "id": "DRIP",
+      "slug": "drip-coffee",
+      "name": "Drip Coffee",
+      "description": "Fresh-brewed house coffee, hot all day.",
+      "categoryId": "coffee",
+      "price": 0,
+      "groups": [
+        "size-drip",
+        "flavor",
+        "boost-lm"
+      ],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#4f3320",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "JJ4RRAT1M65V2",
+      "slug": "caf-au-lait",
+      "name": "Café au Lait",
+      "description": "Brewed coffee with steamed milk.",
+      "categoryId": "coffee",
+      "price": 0,
+      "groups": [
+        "size-hpavrt0w4p66w",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b98a5e",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "ESPRESSO",
+      "slug": "espresso",
+      "name": "Espresso",
+      "description": "A single or a doppio, pulled to order.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-a6d8j12rg3fga",
+        "flavor"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "demi",
+        "liquid": "#3a2112",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover only has \"extra Espresso\" ($1.75 + a required Single $2.95 / Doppio $3.50). We list it as a standalone Espresso at the single/doppio prices. Confirm."
+    },
+    {
+      "id": "H7VAPRXP6YG5G",
+      "slug": "americano",
+      "name": "Americano",
+      "description": "Espresso lengthened with hot water.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-1r0pb2gkg85ac",
+        "flavor",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#4a2c19",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "0651TFGT50J06",
+      "slug": "cappuccino",
+      "name": "Cappuccino",
+      "description": "Espresso, steamed milk and a thick cap of foam.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-rn4zjmtvjv9s8",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#c49a6c",
+        "foam": true,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "0AFD7VSKFJP48",
+      "slug": "cortado",
+      "name": "Cortado",
+      "description": "Espresso cut with a splash of warm milk.",
+      "categoryId": "espresso",
+      "price": 475,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "demi",
+        "liquid": "#c49a6c",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "44M3T47PQ5GPG",
+      "slug": "macchiato",
+      "name": "Macchiato",
+      "description": "Espresso marked with a spoonful of foam.",
+      "categoryId": "espresso",
+      "price": 425,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "demi",
+        "liquid": "#c49a6c",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "G6NYW4QD995P2",
+      "slug": "latte",
+      "name": "Latte",
+      "description": "Espresso with silky steamed milk.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-z5apv47yyj7jg",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot",
+        "whip"
+      ],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b98a5e",
+        "foam": true,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "TFEPH7J76446J",
+      "slug": "mocha",
+      "name": "Mocha",
+      "description": "Espresso, chocolate and steamed milk.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-kvw9gt0pn25mm",
+        "milk",
+        "choc",
+        "flavor",
+        "boost",
+        "details-hot",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#6a3f2c",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "P30TT73Q3E10J",
+      "slug": "breve",
+      "name": "Breve",
+      "description": "Espresso with steamed half-and-half.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-6d5mfhepgxtkp",
+        "flavor",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b98a5e",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "REYHQAFTD555W",
+      "slug": "red-eye",
+      "name": "Red Eye",
+      "description": "Brewed coffee with a shot of espresso.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-schmst612hmse",
+        "flavor",
+        "boost-lm",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#4a2c19",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "MN8E5PF093CPE",
+      "slug": "espresso-con-panna",
+      "name": "Espresso con Panna",
+      "description": "Espresso crowned with whipped cream.",
+      "categoryId": "espresso",
+      "price": 425,
+      "groups": [
+        "flavor"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "demi",
+        "liquid": "#3a2112",
+        "foam": false,
+        "ice": false,
+        "whip": true,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "8JGBZ5X35J2ZG",
+      "slug": "shakerato",
+      "name": "Shakerato",
+      "description": "Espresso shaken over ice until frothy. The Italian summer classic, served cold.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-p0xhhv08ec8j6",
+        "details-iced"
+      ],
+      "tags": [
+        "italian"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "coupe",
+        "liquid": "#c49a6c",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "KESN1Z0HCDX2R",
+      "slug": "golden-milk-latte",
+      "name": "Golden Milk Latte",
+      "description": "Turmeric, ginger and warm spices with steamed milk. Caffeine-free.",
+      "categoryId": "espresso",
+      "price": 0,
+      "groups": [
+        "size-kvw9gt0pn25mm",
+        "milk",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#e3a82b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Description assumes the standard turmeric-based golden milk. Confirm recipe and caffeine claim."
+    },
+    {
+      "id": "E64NZ9F13VPTY",
+      "slug": "iced-coffee",
+      "name": "Iced Coffee",
+      "description": "Brewed strong, poured over ice.",
+      "categoryId": "iced",
+      "price": 375,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#4f3320",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "4KW97CR7PARRJ",
+      "slug": "iced-americano",
+      "name": "Iced Americano",
+      "description": "Two shots of espresso over ice and water.",
+      "categoryId": "iced",
+      "price": 400,
+      "groups": [
+        "flavor",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#4a2c19",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "W8KD3Z80TQB9C",
+      "slug": "iced-latte",
+      "name": "Iced Latte",
+      "description": "Espresso and cold milk over ice.",
+      "categoryId": "iced",
+      "price": 495,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#b98a5e",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "PTT0MB1JRPKBC",
+      "slug": "iced-mocha",
+      "name": "Iced Mocha",
+      "description": "Espresso, chocolate and cold milk over ice.",
+      "categoryId": "iced",
+      "price": 550,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#6a3f2c",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "TV8T2XJ9ZJQ0Y",
+      "slug": "iced-red-eye",
+      "name": "Iced Red Eye",
+      "description": "Iced coffee with a shot of espresso.",
+      "categoryId": "iced",
+      "price": 475,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#4a2c19",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "WEQ9YHXKEEZKP",
+      "slug": "honey-iced-espresso",
+      "name": "Honey Iced Espresso",
+      "description": "Espresso sweetened with honey, shaken over ice.",
+      "categoryId": "iced",
+      "price": 525,
+      "groups": [
+        "milk",
+        "boost",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#e3a82b",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Description is our guess from the name (honey + espresso over ice)."
+    },
+    {
+      "id": "SP81FSTB28XE2",
+      "slug": "flavored-iced-latte",
+      "name": "Flavored Iced Latte",
+      "description": "Iced latte with your choice of syrup.",
+      "categoryId": "iced",
+      "price": 550,
+      "groups": [
+        "milk",
+        "flavor-included-req",
+        "boost",
+        "details-iced",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#b98a5e",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "QR34ACF31R6M4",
+      "slug": "iced-chai",
+      "name": "Iced Chai",
+      "description": "Spiced chai and cold milk over ice.",
+      "categoryId": "iced",
+      "price": 500,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#b0743c",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "BMTAS905BYE62",
+      "slug": "iced-matcha-latte",
+      "name": "Iced Matcha Latte",
+      "description": "Whisked matcha and cold milk over ice.",
+      "categoryId": "iced",
+      "price": 595,
+      "groups": [
+        "matcha-sweet",
+        "milk",
+        "flavor",
+        "boost",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#7f9a4e",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "Y9YX38WWNZRGR",
+      "slug": "iced-golden-milk-latte",
+      "name": "Iced Golden Milk Latte",
+      "description": "Golden milk, poured over ice.",
+      "categoryId": "iced",
+      "price": 550,
+      "groups": [
+        "milk",
+        "flavor",
+        "boost"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#e3a82b",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "2YYVVRG39TFVW",
+      "slug": "iced-tea",
+      "name": "Iced Tea",
+      "description": "Loose-leaf iced tea, brewed fresh.",
+      "categoryId": "iced",
+      "price": 325,
+      "groups": [
+        "tea",
+        "iced-tea-flavor",
+        "flavor",
+        "details-iced"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#b86a2c",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "885F7SETSPSK0",
+      "slug": "blended-mocha",
+      "name": "Blended Mocha",
+      "description": "Espresso and chocolate, blended icy.",
+      "categoryId": "iced",
+      "price": 625,
+      "groups": [
+        "milk",
+        "choc",
+        "flavor",
+        "boost",
+        "details-iced",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#6a3f2c",
+        "foam": false,
+        "ice": false,
+        "whip": true,
+        "blended": true
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "SZ6JNM12WDKVC",
+      "slug": "blended-frozen-latte",
+      "name": "Blended Frozen Latte",
+      "description": "A frozen latte with your choice of syrup.",
+      "categoryId": "iced",
+      "price": 600,
+      "groups": [
+        "milk",
+        "flavor",
+        "flavor-included-req",
+        "boost",
+        "details-iced",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#b98a5e",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": true
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "S6GWXZ9SF3W2J",
+      "slug": "smoothie",
+      "name": "Smoothie",
+      "description": "Blended fruit smoothie, strawberry or mango.",
+      "categoryId": "iced",
+      "price": 625,
+      "groups": [
+        "smoothie-flavor",
+        "smoothie-add"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#d6546a",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": true
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "FYC8DH85RP2XC",
+      "slug": "green-tea-shake",
+      "name": "Green Tea Shake",
+      "description": "Matcha blended thick and cold.",
+      "categoryId": "iced",
+      "price": 600,
+      "groups": [
+        "matcha-sweet",
+        "milk",
+        "boost"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#7f9a4e",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": true
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "GENKY8B45XHJA",
+      "slug": "chai-latte",
+      "name": "Chai Latte",
+      "description": "Spiced chai with steamed milk.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-7ksdz53xyny9m",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b0743c",
+        "foam": true,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "YMRNRWC2A738Y",
+      "slug": "matcha-latte",
+      "name": "Matcha Latte",
+      "description": "Whisked matcha with steamed milk.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-7ksdz53xyny9m",
+        "matcha-sweet",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#7f9a4e",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "3WVJTZJ3QP3RY",
+      "slug": "flavored-tea-latte",
+      "name": "Flavored Tea Latte",
+      "description": "Hot tea topped with steamed milk and a flavor shot of your choice.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-b7yzggdwkvbar",
+        "tea",
+        "milk",
+        "flavor",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#cdbba0",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": false
+    },
+    {
+      "id": "3A3K7D8RDH4X4",
+      "slug": "tea",
+      "name": "Tea",
+      "description": "A pot-style cup of loose-leaf tea.",
+      "categoryId": "tea",
+      "price": 350,
+      "groups": [
+        "tea",
+        "flavor"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#b86a2c",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Description is our guess."
+    },
+    {
+      "id": "BS0AK65CADSNM",
+      "slug": "hot-cocoa",
+      "name": "Hot Cocoa",
+      "description": "Rich hot chocolate, made to order.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-aed172efsvz00",
+        "milk",
+        "choc",
+        "flavor",
+        "boost",
+        "details-hot",
+        "whip"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "mug",
+        "liquid": "#4a281c",
+        "foam": false,
+        "ice": false,
+        "whip": true,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "3Q4HEBG6THKGE",
+      "slug": "flavored-steamer",
+      "name": "Flavored Steamer",
+      "description": "Steamed milk with your choice of flavor. Caffeine-free.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-aed172efsvz00",
+        "milk",
+        "flavor",
+        "flavor-included-req",
+        "boost",
+        "details-hot"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "mug",
+        "liquid": "#cdbba0",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "RRQ19SAX36K2Y",
+      "slug": "italian-soda",
+      "name": "Italian Soda",
+      "description": "Sparkling water and your choice of flavor, over ice.",
+      "categoryId": "tea",
+      "price": 325,
+      "groups": [
+        "flavor-included-req"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#d9486b",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "CP25YZD7EGETA",
+      "slug": "cremosa",
+      "name": "Cremosa",
+      "description": "An Italian soda with cream. Pick your flavor.",
+      "categoryId": "tea",
+      "price": 400,
+      "groups": [
+        "flavor-included-req"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#d9486b",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Description is our guess (\"cremosa\" = Italian soda + cream)."
+    },
+    {
+      "id": "CJ5SVYMQ2FGZP",
+      "slug": "juice",
+      "name": "Juice",
+      "description": "Bottled juice.",
+      "categoryId": "tea",
+      "price": 350,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#e8922a",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "KD8H1ES1EV4CY",
+      "slug": "bottled-water",
+      "name": "Bottled Water",
+      "description": "Still water.",
+      "categoryId": "tea",
+      "price": 200,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#cfe6ee",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "CN4PK8EP6D8TJ",
+      "slug": "san-pellegrino",
+      "name": "San Pellegrino",
+      "description": "Sparkling mineral water.",
+      "categoryId": "tea",
+      "price": 0,
+      "groups": [
+        "size-vsch8a7srvznc"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#cfe6ee",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "FY0W5XMJAJ7KJ",
+      "slug": "breakfast-sandwich",
+      "name": "Breakfast Sandwich",
+      "description": "Built on your choice of bagel, croissant or toast. Add bacon, ham, turkey and cheese.",
+      "categoryId": "breakfast",
+      "price": 699,
+      "groups": [
+        "bread",
+        "spreads"
+      ],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "sandwich",
+        "liquid": "#d9a441",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Base price $6.99; the Clover fillings group (ham, turkey, bacon, cheeses) is offered as add-ons. Confirm what is included."
+    },
+    {
+      "id": "WKKK6MM0HV8D4",
+      "slug": "bagel",
+      "name": "Bagel",
+      "description": "A fresh bagel with your choice of spread.",
+      "categoryId": "breakfast",
+      "price": 285,
+      "groups": [
+        "bread",
+        "spreads",
+        "side"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bagel",
+        "liquid": "#d9a441",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "BBY8GF96D6P54",
+      "slug": "yogurt-and-granola-parfait",
+      "name": "Yogurt & Granola Parfait",
+      "description": "Yogurt layered with granola.",
+      "categoryId": "breakfast",
+      "price": 450,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "parfait",
+        "liquid": "#f1dfc2",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Description is our guess."
+    },
+    {
+      "id": "BF1HGM5MXGC9G",
+      "slug": "biscotti",
+      "name": "Biscotti",
+      "description": "Twice-baked Italian cookie, made for dunking.",
+      "categoryId": "sweets",
+      "price": 250,
+      "groups": [],
+      "tags": [
+        "popular"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cookie",
+        "liquid": "#c58b4b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "1PTJ6FC705TX6",
+      "slug": "gluten-free-biscotti",
+      "name": "Gluten-Free Biscotti",
+      "description": "The same dunker, gluten free.",
+      "categoryId": "sweets",
+      "price": 300,
+      "groups": [],
+      "tags": [
+        "gluten-free"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cookie",
+        "liquid": "#c58b4b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "M0B7W521Q9QSW",
+      "slug": "amys-cookie",
+      "name": "Amy's Cookie",
+      "description": "A small cookie baked at Amy’s.",
+      "categoryId": "sweets",
+      "price": 325,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cookie",
+        "liquid": "#b97a3d",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover links these bakes to \"Amy’s\". Confirm bakery relationship and wording."
+    },
+    {
+      "id": "H878558BJZ4PW",
+      "slug": "snowball-cookies",
+      "name": "Snowball Cookies",
+      "description": "Two powdered-sugar snowball cookies.",
+      "categoryId": "sweets",
+      "price": 425,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cookie",
+        "liquid": "#f2ece0",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "5F7ZH38KDRDV6",
+      "slug": "carrot-cake",
+      "name": "Carrot Cake",
+      "description": "A slice of housemade carrot cake from Amy’s.",
+      "categoryId": "sweets",
+      "price": 500,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cake",
+        "liquid": "#c9783a",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "5HXJ035MDRD5C",
+      "slug": "carrot-cake-minis",
+      "name": "Carrot Cake Minis",
+      "description": "Carrot-cake cupcake muffins.",
+      "categoryId": "sweets",
+      "price": 500,
+      "groups": [],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "cake",
+        "liquid": "#c9783a",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "4CD3792BH1HAG",
+      "slug": "bahama-nada-latte",
+      "name": "Bahama Nada Latte",
+      "description": "Ritual rum and coconut in espresso with steamed milk and cinnamon on top.",
+      "categoryId": "cocktails",
+      "price": 800,
+      "groups": [],
+      "tags": [
+        "alcohol",
+        "signature"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "hot",
+      "preview": {
+        "vessel": "cup",
+        "liquid": "#a3622f",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "A9PPNJAN9TSQ6",
+      "slug": "blueberry-mocktail",
+      "name": "Blueberry Mocktail",
+      "description": "Blueberry, lemon and basil muddled with vanilla and malt, shaken and finished with soda.",
+      "categoryId": "cocktails",
+      "price": 800,
+      "groups": [],
+      "tags": [
+        "zero-proof"
+      ],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "iced",
+      "preview": {
+        "vessel": "tall",
+        "liquid": "#5b4a8f",
+        "foam": false,
+        "ice": true,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "8W53ZFWPW9HSJ",
+      "slug": "surfside-half-and-half",
+      "name": "Surfside Half & Half",
+      "description": "Iced tea and lemonade with vodka, canned.",
+      "categoryId": "beer",
+      "price": 694,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "can",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "F74STS772ZW06",
+      "slug": "surfside-blueberry-lemonade",
+      "name": "Surfside Blueberry Lemonade",
+      "description": "Blueberry lemonade with vodka, canned.",
+      "categoryId": "beer",
+      "price": 700,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "can",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "3BR0FCB1EXK5J",
+      "slug": "modelito",
+      "name": "Modelito",
+      "description": "A little Modelo, ice cold.",
+      "categoryId": "beer",
+      "price": 350,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover spells it \"Modelito\". Confirm it is a small Modelo, and whether beer prices like $5.52 / $6.94 are tax-inclusive."
+    },
+    {
+      "id": "8SYV7TBTAD95J",
+      "slug": "modelito-4-for-12",
+      "name": "Modelito 4-for-12",
+      "description": "Four Modelitos for twelve dollars.",
+      "categoryId": "beer",
+      "price": 1200,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true,
+      "review": "Clover spells it \"Modelito\". Confirm it is a small Modelo, and whether beer prices like $5.52 / $6.94 are tax-inclusive."
+    },
+    {
+      "id": "TWYYA7SQN44NC",
+      "slug": "abita",
+      "name": "Abita",
+      "description": "Louisiana craft lager.",
+      "categoryId": "beer",
+      "price": 552,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "FAKWXTEVTW564",
+      "slug": "deschutes-black-butte-porter",
+      "name": "Deschutes Black Butte Porter",
+      "description": "Oregon’s dark, chocolatey porter.",
+      "categoryId": "beer",
+      "price": 552,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "G2D5MMZX267WE",
+      "slug": "spaten",
+      "name": "Spaten",
+      "description": "Crisp Munich-style lager.",
+      "categoryId": "beer",
+      "price": 460,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "bottle",
+        "liquid": "#c98a2b",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "7VYE7WSCS29HT",
+      "slug": "la-marca-prosecco-187-ml",
+      "name": "La Marca Prosecco (187 ml)",
+      "description": "A single-serve split of sparkling prosecco.",
+      "categoryId": "wine",
+      "price": 900,
+      "groups": [],
+      "tags": [
+        "alcohol"
+      ],
+      "ageRestricted": true,
+      "available": false,
+      "serve": "none",
+      "preview": {
+        "vessel": "flute",
+        "liquid": "#f0e2a3",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    },
+    {
+      "id": "JOE",
+      "slug": "joe-to-go",
+      "name": "Joe to Go",
+      "description": "A whole to-go container of fresh coffee.",
+      "categoryId": "box",
+      "price": 0,
+      "groups": [
+        "kit",
+        "box-milk"
+      ],
+      "tags": [],
+      "ageRestricted": false,
+      "available": true,
+      "serve": "none",
+      "preview": {
+        "vessel": "box",
+        "liquid": "#4f3320",
+        "foam": false,
+        "ice": false,
+        "whip": false,
+        "blended": false
+      },
+      "draftedByUs": true
+    }
+  ],
+  "hiddenPos": [
+    {
+      "id": "X49QM8HK7V6XW",
+      "name": "Rum",
+      "price": 0
+    },
+    {
+      "id": "K76ARZXWHJMX2",
+      "name": "Tequila",
+      "price": 0
+    },
+    {
+      "id": "2HMTQRJPY6KNM",
+      "name": "Gin",
+      "price": 0
+    },
+    {
+      "id": "KVV3QNKDHZMDR",
+      "name": "Bourbon",
+      "price": 0
+    },
+    {
+      "id": "675YWEVZJDWKA",
+      "name": "Irish Whiskey",
+      "price": 0
+    },
+    {
+      "id": "3PTH3GSFMESEA",
+      "name": "Vodka",
+      "price": 0
+    },
+    {
+      "id": "N74FEJHFSMM08",
+      "name": "oat milk",
+      "price": 140
+    },
+    {
+      "id": "BJE4V4Z0Y9JDG",
+      "name": "Food Extras",
+      "price": 0
+    },
+    {
+      "id": "829YG5EGSTQDY",
+      "name": "Bacon Side",
+      "price": 175
+    }
+  ],
+  "review": [
+    "Orange flavor had no price in Clover (all other flavors are +$0.75). We priced it at +$0.75; \"Any Flavor\" was dropped.",
+    "Coffee Small / Medium / Large (3 Clover items) are merged into one \"Drip Coffee\" item with a size choice. Prices unchanged.",
+    "Chocolate Cherry Latte: Clover name: \"Chocolate Cherrt Latte Aka Mocha Mix Choc Cheery With Espresso Then Add Milk\" (typo + recipe in the name).",
+    "Rose London Fog: Clover name is \"Lucy Dacus Rose London Fog\": confirm the name/story is OK to publish.",
+    "Frittata & Coffee Mimosa: Clover calls this \"Special Frittata Coffee Mimossa\" ($16.50) and does not flag it 21+. We treat it as alcohol (mimosa) until confirmed.",
+    "Espresso: Clover only has \"extra Espresso\" ($1.75 + a required Single $2.95 / Doppio $3.50). We list it as a standalone Espresso at the single/doppio prices. Confirm.",
+    "Golden Milk Latte: Description assumes the standard turmeric-based golden milk. Confirm recipe and caffeine claim.",
+    "Iced Americano: Clover name: \"Iced Americano - 2 shots\".",
+    "Honey Iced Espresso: Description is our guess from the name (honey + espresso over ice).",
+    "Tea: Description is our guess.",
+    "Cremosa: Description is our guess (\"cremosa\" = Italian soda + cream).",
+    "San Pellegrino: Clover name: \"San Pel Water\".",
+    "Breakfast Sandwich: Base price $6.99; the Clover fillings group (ham, turkey, bacon, cheeses) is offered as add-ons. Confirm what is included.",
+    "Yogurt & Granola Parfait: Description is our guess.",
+    "Biscotti: Clover name: \"Biscotti for Everybotti each\".",
+    "Gluten-Free Biscotti: Clover name: \"Biscotti for Everybotti Gluten Free Biscotti\".",
+    "Amy's Cookie: Clover links these bakes to \"Amy’s\". Confirm bakery relationship and wording.",
+    "Amy's Cookie: Clover name: \"Small Amys Cookie\".",
+    "Snowball Cookies: Clover name: \"Two Snowball Cookie\".",
+    "Carrot Cake: Clover name: \"Carrot cake housemade at Amy's\".",
+    "Carrot Cake Minis: Clover name: \"Carrot Cake Minis Cupcake Muffins\".",
+    "Bahama Nada Latte: Clover name: \"Bahama Nada Latte (Small)~ 1.5 Oz Ritual Rum + 1oz Coconut In Espresso// Steamed Milk\\\\ Cin Powder On Top\".",
+    "Blueberry Mocktail: Clover name: \"Blueberry Mocktail~ 1 Scoop Blueb, Half Lemon, 1 Basilleaf Muddled\\\\ …\".",
+    "Modelito: Clover spells it \"Modelito\". Confirm it is a small Modelo, and whether beer prices like $5.52 / $6.94 are tax-inclusive.",
+    "Modelito 4-for-12: Clover spells it \"Modelito\". Confirm it is a small Modelo, and whether beer prices like $5.52 / $6.94 are tax-inclusive.",
+    "La Marca Prosecco (187 ml): Clover shows this as Unavailable.",
+    "Rum, Tequila, Gin, Bourbon, Irish Whiskey and Vodka are $0 POS buttons in Clover (no price). They are NOT orderable on the new site until the owner gives prices (e.g., as a \"spike it\" add-in).",
+    "Bacon Side ($1.75), \"oat milk\" ($1.40) and \"Food Extras\" ($0) look like register add-on buttons, so they are hidden as standalone items. Bacon and oat milk are available as options instead.",
+    "Clover has EMPTY online categories: Wine by glass, cocktails, SPRITZEZ, Digestivi, Gift Cards, merch, Coffee By The Pound, Buffalo Delights Bakery Items. The in-house bar menu is not online.",
+    "No item is flagged 21+ in Clover, not even the beer. We flag all alcohol 21+ and restrict it to for-here orders (confirm license terms).",
+    "Clover asks \"To go / Here\" on every item. On the new site it is a single order-level choice.",
+    "Clover item groups for Decaf, Half Caff, Room 4, Temp, Alcohol Up, frittata are empty (no options) and were dropped; Candy Cane (seasonal) was dropped.",
+    "All descriptions marked draftedByUs are our wording and need owner approval."
+  ]
+}
