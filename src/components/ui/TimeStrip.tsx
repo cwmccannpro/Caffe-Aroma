@@ -16,7 +16,7 @@ const snap = (h: number) => Math.round(h * 20) / 20;
 
 function SunIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+    <svg viewBox="0 0 24 24" className="size-[15px] sm:size-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
       <circle cx="12" cy="12" r="4.2" fill="currentColor" />
       <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7" />
     </svg>
@@ -24,7 +24,7 @@ function SunIcon() {
 }
 function MoonIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
+    <svg viewBox="0 0 24 24" className="size-[15px] sm:size-[18px]" fill="currentColor" aria-hidden>
       <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a.6.6 0 0 0-.8-.7A9.6 9.6 0 1 0 21.2 15a.6.6 0 0 0-.7-.8Z" />
     </svg>
   );
@@ -88,9 +88,9 @@ export default function TimeStrip({ className = "" }: { className?: string }) {
 
   return (
     <div className={`select-none ${className}`}>
-      <div className="mb-1 flex min-h-[38px] items-center justify-between gap-4 text-on-scene">
+      <div className="mb-0.5 flex min-h-[30px] items-center justify-between gap-4 text-on-scene sm:mb-1 sm:min-h-[38px]">
         <div className="flex min-w-0 items-baseline gap-3" aria-live="polite">
-          <span className="display shrink-0 whitespace-nowrap text-[1.55rem] leading-none">{formatHour(target)}</span>
+          <span className="display shrink-0 whitespace-nowrap text-[1.3rem] leading-none sm:text-[1.55rem]">{formatHour(target)}</span>
           <span className="eyebrow truncate text-on-scene-muted">
             <span className="max-sm:hidden">{previewing ? "Previewing" : story !== null ? "A day on Elmwood" : "Live"} · </span>
             {sample.label}
@@ -107,7 +107,7 @@ export default function TimeStrip({ className = "" }: { className?: string }) {
 
       <div
         ref={track}
-        className="relative h-11 touch-none cursor-pointer"
+        className="relative h-9 touch-none cursor-pointer sm:h-11"
         onPointerDown={(e) => {
           dragging.current = true;
           (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
@@ -117,10 +117,10 @@ export default function TimeStrip({ className = "" }: { className?: string }) {
         onPointerUp={() => (dragging.current = false)}
         onPointerCancel={() => (dragging.current = false)}
       >
-        <div className="absolute inset-x-0 top-1/2 h-[10px] -translate-y-1/2 rounded-full" style={{ background: gradient, boxShadow: "0 0 0 1.5px rgb(248 236 216 / .35), 0 10px 30px -10px rgb(0 0 0 / .6)" }} />
+        <div className="absolute inset-x-0 top-1/2 h-2 -translate-y-1/2 rounded-full sm:h-[10px]" style={{ background: gradient, boxShadow: "0 0 0 1.5px rgb(248 236 216 / .35), 0 10px 30px -10px rgb(0 0 0 / .6)" }} />
         {/* where "now" is */}
         {mounted && (
-          <div className="absolute top-1/2 h-[18px] w-[2px] -translate-y-1/2 rounded bg-white/80" style={{ left: `${((clamp(live, MIN, MAX) - MIN) / SPAN) * 100}%` }} title="Now" />
+          <div className="absolute top-1/2 h-[14px] w-[2px] -translate-y-1/2 rounded bg-white/80 sm:h-[18px]" style={{ left: `${((clamp(live, MIN, MAX) - MIN) / SPAN) * 100}%` }} title="Now" />
         )}
         <div
           role="slider"
@@ -131,7 +131,7 @@ export default function TimeStrip({ className = "" }: { className?: string }) {
           aria-valuenow={Number(target.toFixed(2))}
           aria-valuetext={`${formatHour(target)}, ${sample.label}`}
           onKeyDown={onKey}
-          className="absolute top-1/2 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full transition-[box-shadow,transform] duration-200 focus-visible:outline-offset-4"
+          className="absolute top-1/2 grid h-7 w-7 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full transition-[box-shadow,transform] duration-200 focus-visible:outline-offset-4 sm:h-9 sm:w-9"
           style={{
             left: `${pct}%`,
             background: isNight ? "#1a1424" : "#fff5e1",

@@ -150,9 +150,23 @@ export default function Header({ overScene = true }: { overScene?: boolean }) {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <Link href="/order" className="btn btn-primary !min-h-[44px] !px-5 text-[0.95rem]" style={floating || glass ? { background: "var(--amber)", color: "#1a110c" } : undefined}>
+            <Link href="/order" className="btn btn-primary !min-h-[44px] !px-5 text-[0.95rem] max-[380px]:!px-3.5" style={floating || glass ? { background: "var(--amber)", color: "#1a110c" } : undefined}>
               Order ahead
             </Link>
+            <a
+              href={`https://www.instagram.com/${business.instagram}/`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Caffe Aroma on Instagram"
+              className="grid h-11 w-11 place-items-center rounded-full border transition-colors hover:bg-[rgb(255_255_255/.12)]"
+              style={{ borderColor: floating ? "rgb(248 236 216 / .4)" : "currentColor" }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" />
+              </svg>
+            </a>
             <button type="button" onClick={openMenu} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-nav" className="grid h-11 w-11 place-items-center rounded-full border md:hidden" style={{ borderColor: floating ? "rgb(248 236 216 / .4)" : "currentColor" }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
                 <path d="M4 7h16M4 12h16M4 17h16" />

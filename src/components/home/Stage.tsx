@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import StatusChip from "@/components/ui/StatusChip";
 import TimeStrip from "@/components/ui/TimeStrip";
 import { smoothstep } from "@/lib/timeOfDay";
-import { formatHour } from "@/lib/time";
 import { useTime } from "@/store/time";
 import { business } from "@data/business";
 import HeroScene from "./HeroScene";
@@ -40,11 +39,6 @@ const CHAPTERS: Chapter[] = [
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const clamp = (n: number, a: number, b: number) => Math.min(b, Math.max(a, n));
-
-const HOURS_LABEL = (() => {
-  const hs = Object.values(business.hours);
-  return `${formatHour(Math.min(...hs.map((h) => h.open)))} – ${formatHour(Math.max(...hs.map((h) => h.close)))}`;
-})();
 
 /**
  * The hero plus a scroll-driven walk through the day. One sticky 3D stage stays put while the chapters scroll over it.
@@ -143,9 +137,20 @@ export default function Stage() {
             <div className="max-w-[40rem]">
               <div className="flex flex-wrap items-center gap-2">
                 <StatusChip />
-                <span className="chip" style={{ color: "var(--on-scene)", borderColor: "rgb(248 236 216 / .3)", background: "rgb(20 10 8 / .5)" }}>
-                  Open daily {HOURS_LABEL}
-                </span>
+                <a
+                  href={business.mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="chip transition-colors hover:bg-[rgb(20_10_8/.8)]"
+                  style={{ color: "var(--on-scene)", borderColor: "rgb(248 236 216 / .3)", background: "rgb(20 10 8 / .5)" }}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+                    <circle cx="12" cy="10" r="2.4" />
+                  </svg>
+                  Get directions
+                  <span className="sr-only"> (opens Google Maps)</span>
+                </a>
               </div>
               <h1 className="display mt-5 text-[clamp(2.7rem,min(7.6vw,13vh),7.4rem)] text-on-scene">
                 Coffee by&nbsp;day.
@@ -188,7 +193,7 @@ export default function Stage() {
           {CHAPTERS.map((c, i) => (
             <div key={c.eyebrow} className="relative flex h-[100svh] min-h-[640px] snap-start snap-always items-end md:items-center" aria-hidden={active !== i}>
               <div className={`pointer-events-none absolute inset-0 ${c.side === "left" ? (c.dense ? "bg-[linear-gradient(90deg,rgb(14_6_4/.93)_0%,rgb(14_6_4/.78)_30%,rgb(14_6_4/.3)_46%,transparent_62%)]" : "bg-[linear-gradient(90deg,rgb(14_6_4/.78)_0%,rgb(14_6_4/.4)_32%,transparent_58%)]") : "bg-[linear-gradient(270deg,rgb(14_6_4/.84)_0%,rgb(14_6_4/.5)_32%,transparent_60%)]"} max-md:bg-[linear-gradient(180deg,transparent_30%,rgb(14_6_4/.88)_100%)]`} />
-              <div className={`relative mx-auto flex w-full max-w-[1400px] px-4 pb-32 sm:px-8 md:pb-0 ${c.side === "right" ? "md:justify-end" : ""}`}>
+              <div className={`relative mx-auto flex w-full max-w-[1400px] px-4 pb-[9.5rem] sm:px-8 md:pb-0 ${c.side === "right" ? "md:justify-end" : ""}`}>
                 <div className="max-w-[28rem] transition-[opacity,transform] duration-700" style={{ opacity: active === i ? 1 : 0, transform: active === i ? "none" : "translateY(26px)", transitionTimingFunction: "var(--ease)" }}>
                   <p className="eyebrow" style={{ color: "var(--amber)" }}>
                     {c.eyebrow}
@@ -213,7 +218,7 @@ export default function Stage() {
 
       {/* the clock dial rides along the bottom of the whole walk */}
       <div className="pointer-events-none sticky bottom-0 z-20 h-0">
-        <div className="pointer-events-auto absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-4 sm:px-8 sm:pb-6">
+        <div className="pointer-events-auto absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-4 pb-3 sm:px-8 sm:pb-6">
           <div className="max-w-[46rem] rounded-3xl bg-[linear-gradient(180deg,transparent,rgb(14_6_4/.55))] px-1 pt-3 md:mx-auto">
             <TimeStrip />
           </div>

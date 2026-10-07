@@ -4,7 +4,10 @@ test.describe("the storefront hero and the day that follows", () => {
   test("says plainly that the cafe is open daily 6 AM to 12 AM, and where it is", async ({ page }, info) => {
     await page.goto("/?gl=off");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Coffee by");
-    await expect(page.getByText("Open daily 6 AM – 12 AM").first()).toBeVisible();
+    await expect(page.getByText("6 AM – 12 AM, every day")).toBeAttached();
+    // the hero chip is a way out to Google Maps, and Instagram sits in the header beside the order button
+    await expect(page.getByRole("link", { name: /Get directions/ }).first()).toHaveAttribute("href", /google\.com\/maps/);
+    await expect(page.getByRole("banner").getByRole("link", { name: "Caffe Aroma on Instagram" })).toHaveAttribute("href", /instagram\.com\/the_caffe_elmwood/);
     test.skip(info.project.name !== "desktop", "the address line is desktop-only in the hero; phones get it in the info section");
     await expect(page.getByRole("link", { name: /957 Elmwood Ave/ }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: "(716) 884-4522" }).first()).toHaveAttribute("href", "tel:+17168844522");
