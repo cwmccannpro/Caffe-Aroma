@@ -49,6 +49,7 @@ E2E_BASE_URL=http://localhost:8787 npm run e2e   # the same Playwright suite aga
 | `src/lib/payments/*` | `PaymentProvider` interface and the mock processor. |
 | `src/store/{cart,shop}.ts` | Cart, orders, "pause ordering", sold-out items (localStorage + cross-tab sync). |
 | `scripts/capture-posters.mjs` | Regenerates the still images (`public/posters/ext-*.webp` = storefront, `tod-*.webp` = room) from the live scene with headless Chrome. Needs `npm run dev` running. |
+| `scripts/make-icons.mjs` | Draws the favicon set (`src/app/icon.svg`, `favicon.ico`, `apple-icon.png`) from vector drawings of the sign: red frame, green stripe, steaming cup, black bar. Next links them automatically. |
 | `scripts/bundle-report.mjs` | Prints gzip sizes of the client chunks after `npm run build`. |
 | `scripts/scene-stats.mjs` | Counts renderables and draw calls per scene component against the dev server (the corner hero is ~150 draw calls). |
 | `scripts/perf-check.mjs` | Load-speed check against the production server (`npx next start -p 3100`): paint times, what is downloaded before the 3D chunk is requested, poster arrival. |
