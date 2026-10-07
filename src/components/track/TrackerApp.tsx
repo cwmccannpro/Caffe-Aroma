@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Header from "@/components/site/Header";
 import Providers, { useReady } from "@/components/order/Providers";
 import { money } from "@/lib/pricing";
@@ -216,10 +217,24 @@ function Inner({ id }: { id: string }) {
   );
 }
 
-export default function TrackerApp({ id }: { id: string }) {
-  return (
-    <Providers>
-      <Inner id={id} />
-    </Providers>
-  );
+/**
+ * The order id comes from the address bar, not from a route param: the site is a static export, so /order/track/<anything>
+ * is served by the same pre-built page (the host rewrites it to /order/track/_/) and the id is read here once it loads.
+ */
+const noSubscription = () => () => {};
+const readOrderId = () => {
+  const parts = window.location.pathname.split("/").filter(Boolean);
+  const at = parts.indexOf("track");
+  return at >= 0 ? decodeURIComponent(parts[at + 1] ?? "") : "";
+};
+
+/** null while the page is still being built or hydrated (there is no address bar yet), then the id from the URL. */
+function useTrackedOrderId(): string | null {
+  usePathname(); // re-read after a client-side navigation
+  return useSyncExternalStore(noSubscription, readOrderId, () => null);
+}
+
+export default function TrackerApp() {
+  const id = useTrackedOrderId();
+  return <Providers>{id === null ? <Header overScene={false} /> : <Inner id={id} />}</Providers>;
 }

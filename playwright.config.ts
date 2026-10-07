@@ -1,6 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const PORT = 3100;
+// E2E_BASE_URL=http://127.0.0.1:8788 runs the same tests against the Cloudflare build (npm run build:cf, then npm run preview:cf)
+const REMOTE = process.env.E2E_BASE_URL;
 
 /**
  * End-to-end tests drive the installed Google Chrome (no browser download needed).
@@ -15,7 +17,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"]],
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: REMOTE ?? `http://localhost:${PORT}`,
     channel: "chrome",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
@@ -24,10 +26,12 @@ export default defineConfig({
     { name: "desktop", use: { ...devices["Desktop Chrome"], channel: "chrome", viewport: { width: 1440, height: 900 } } },
     { name: "mobile", use: { ...devices["Pixel 7"], channel: "chrome", viewport: { width: 390, height: 844 } } },
   ],
-  webServer: {
-    command: `npx next start -p ${PORT}`,
-    url: `http://localhost:${PORT}`,
-    reuseExistingServer: true,
-    timeout: 120_000,
-  },
+  webServer: REMOTE
+    ? undefined
+    : {
+        command: `npx next start -p ${PORT}`,
+        url: `http://localhost:${PORT}`,
+        reuseExistingServer: true,
+        timeout: 120_000,
+      },
 });

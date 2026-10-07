@@ -11,7 +11,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "menu": "node scripts/normalize-menu.mjs",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "build:cf": "node scripts/build-static.mjs",
+    "preview:cf": "npx wrangler dev",
+    "deploy:cf": "npm run build:cf && npx wrangler deploy"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

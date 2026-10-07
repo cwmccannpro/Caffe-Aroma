@@ -5,7 +5,7 @@ import nextTs from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "scripts/**", "node_modules/**", "e2e/**", "playwright.config.ts", "test-results/**", ".playwright-mcp/**"]),
+  globalIgnores([".next/**", "out/**", "worker/**", ".wrangler/**", "build/**", "next-env.d.ts", "scripts/**", "node_modules/**", "e2e/**", "playwright.config.ts", "test-results/**", ".playwright-mcp/**"]),
   {
     rules: {
       // R3F uses non-DOM JSX props (position, args, ...) and mutates refs in frame loops on purpose.

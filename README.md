@@ -19,6 +19,22 @@ Useful URLs while developing:
 - Quality overrides: `?q=high|med|lite|poster` or `?gl=off` (no WebGL fallback).
 - Camera framing (dev only): `?cam=px,py,pz,tx,ty,tz,fov`. Note +x runs to the screen-left when looking at the storefront from the street.
 
+## Hosting (Cloudflare Worker)
+
+The pitch is live at **https://caffearoma.cwmccann.pro**. It is the site exported as plain files (`STATIC_EXPORT=1 next build` into `out/`) and served by a Cloudflare Worker with Static Assets (`wrangler.jsonc`, `worker/index.js`). The site has no server code, so there is nothing to run: orders stay in the visitor's browser exactly as in the demo.
+
+```bash
+npm run deploy:cf   # build the export, then `wrangler deploy` (needs `npx wrangler login` once)
+npm run build:cf    # just the export + out/_headers
+npm run preview:cf  # serve ./out through the Worker on http://localhost:8787 (run build:cf first)
+E2E_BASE_URL=http://localhost:8787 npm run e2e   # the same Playwright suite against the Worker
+```
+
+- The Worker does two things static files cannot: `/order/track/<any id>` is answered by the one pre-built tracker page (it reads the id from the URL; `next start` does the same through a rewrite in `next.config.ts`), and `/robots.txt`.
+- It is marked **noindex** (header in `scripts/build-static.mjs`, `Disallow: /` in the Worker) because it is a pitch, not the cafe's real site. To launch for real, remove both and point the domain at the production deployment.
+- Dev, tests and `npm start` are unchanged: the export only switches on with `STATIC_EXPORT=1`.
+- `npm run deploy:cf` rebuilds `.next` in export mode; run `npm run build` again before `npm start` / `npm run e2e` locally.
+
 ## Where things live
 
 | Path | What |
@@ -48,4 +64,4 @@ Useful URLs while developing:
 | Menu is a static snapshot. | Sync from Clover inventory so 86'd items and price changes flow through. |
 | SMS/email are not sent. | Add notifications on order status changes. |
 
-Nothing here deploys, charges a card or contacts anyone on its own.
+Nothing here charges a card or contacts anyone on its own. Deploying is a deliberate step (`npm run deploy:cf`).

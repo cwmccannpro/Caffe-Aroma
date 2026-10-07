@@ -55,7 +55,7 @@ test.describe("practical info at a glance", () => {
     await expect(info.getByText("957 Elmwood Ave", { exact: true })).toBeVisible();
     await expect(info.getByRole("link", { name: "Get directions" })).toHaveAttribute("href", /google\.com\/maps/);
     await expect(info.getByRole("link", { name: "Call the cafe" })).toHaveAttribute("href", "tel:+17168844522");
-    await expect(info.getByRole("link", { name: "Start an order" })).toHaveAttribute("href", "/order");
+    await expect(info.getByRole("link", { name: "Start an order" })).toHaveAttribute("href", /^\/order\/?$/);
     for (const label of ["Patio seating", "Live music & open mic", "Order ahead for pickup"]) await expect(info.getByRole("listitem").filter({ hasText: label })).toBeVisible();
   });
 
